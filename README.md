@@ -8,3 +8,6 @@ Things we need to do for Milestone 2:
 - Plot your data. For tabular data, you will need to run scatters, for image data, you will need to plot your example classes.
 - How will you preprocess your data? You should explain this in your readme.md file and link your jupyter notebook to it. Your jupyter notebook should be uploaded to your repo.
 - Jupyter Notebook data download and environment setup requirements
+
+The Dataset we are using:
+https://www.kaggle.com/datasets/uciml/student-alcohol-consumption

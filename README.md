@@ -11,3 +11,11 @@ Things we need to do for Milestone 2:
 
 The Dataset we are using:
 https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
+
+# Data Preprocessing Steps
+- Our data contains no missing values so we don't need to perform missingness analysis
+- Feature Selection
+- Data Transformations:
+  - Create an averaged alcoholism column from dalc and walc
+  - Convert Sex from string 'M'/'F' to int 0/1
+  - One Hot Encode categorical columns we selected

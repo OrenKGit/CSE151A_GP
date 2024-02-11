@@ -14,7 +14,7 @@ https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
 
 # Data Preprocessing Steps
 - Our data contains no missing values so we don't need to perform missingness analysis
-- Feature Selection
+- Feature Selection through correlation coefs
 - Data Transformations:
   - Create an averaged alcoholism column from dalc and walc
   - Convert Sex from string 'M'/'F' to int 0/1

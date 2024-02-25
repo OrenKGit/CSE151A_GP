@@ -1,7 +1,7 @@
 # CSE151A_GP
 Group Project for CSE151A
 
-Things we need to do for Milestone 2:
+# Milestone 2
 - Create a GitHub ID :white_check_mark:
 - Create a GitHub Repository :white_check_mark:
 - Perform the data exploration step (i.e. evaluate your data, # of observations, details about your data distributions, scales, missing data, column descriptions) Note: For image data you can still describe your data by the number of classes, # of images, plot example classes of the image, size of images, are sizes uniform? Do they need to be cropped? normalized? etc.
@@ -19,3 +19,10 @@ https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
   - Create an averaged alcoholism column from dalc and walc
   - Convert Sex from string 'M'/'F' to int 0/1
   - One Hot Encode categorical columns we selected
+
+
+
+# Milestone 3
+
+
+

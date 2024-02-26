@@ -5,8 +5,9 @@ Group Project for CSE151A
 https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
 
 # Our Jupyter Notebooks:
+- Pre Processing and EDA notebook
 [![CSE151A_GroupProject.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OrenKGit/CSE151A_GP/blob/main/CSE151A_GroupProject.ipynb)]
-
+- Model 1 notebnook
 [![model.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OrenKGit/CSE151A_GP/blob/main/model.ipynb)]
 
 # Data Preprocessing Steps

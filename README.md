@@ -66,6 +66,7 @@ https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
   - We binned our linear regression's predictions to make it perform like a classifier
   - Instead we likely could have implemented a one-vs-rest multiclass logistic regression as a simple classifier
   - Our model still gave us a decent foundation to work off after being binned to perform like a classifier
+  - In terms of the fitting graph, it is **underfitting**. This model is too simple shown by the poor accuracy, precision, and recall, and regression on a classification problem can not capture the pattern of the proper rating of these reviews.
 - To improve our rating predictor we plan to do a few things
   - Implement review title and text sentiment as a feature
     - Sentiment is likely one of the strongest features in this dataset and as a human reader it is what we would use to predict rating

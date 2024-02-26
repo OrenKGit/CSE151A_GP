@@ -4,6 +4,11 @@ Group Project for CSE151A
 # The Dataset we are using:
 https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
 
+# Our Jupyter Notebooks:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OrenKGit/CSE151A_GP/CSE151A_GroupProject.ipynb]
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OrenKGit/CSE151A_GP/model.ipynb]
+
 # Data Preprocessing Steps
 # We need to rewrite this section
 - Our goal is to predict review star rating based on review features including both product features and user features.

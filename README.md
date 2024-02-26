@@ -65,6 +65,7 @@ Dataset of customer reviews on second hand apparels. It includes features such a
 - Overall our linear regression performed poorly as a review rating predictor
   - We wanted to get a quick idea of how a simple model would perform on this classification task
   - Realisitically we shouldn't have chosen a linear regression as our simple model as we have a classification task not regression
+  - Some rating predictions went into the negatives, which is not realistic
   - We binned our linear regression's predictions to make it perform like a classifier
   - Instead we likely could have implemented a one-vs-rest multiclass logistic regression as a simple classifier
   - Our model still gave us a decent foundation to work off after being binned to perform like a classifier

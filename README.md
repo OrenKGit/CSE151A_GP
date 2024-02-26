@@ -10,7 +10,6 @@ https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OrenKGit/CSE151A_GP/model.ipynb]
 
 # Data Preprocessing Steps
-# We need to rewrite this section
 - Our goal is to predict review star rating based on review features including both product features and user features.
 - Our data contains some products that have no reviews. We chose to drop these products from our dataset
 - For feature selection we used both feature selection methods such as correlation coefs and our intuition for what features will be important.
@@ -24,7 +23,9 @@ https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
     - weight: '130lbs' to 130
     - age: '51' to 51
   - Text Processing:
-    - We will likely implement review title and text processing using a library to more easily tokenize and process text sentiment
+    - We processed the text using nltk to help us tokenize our review text
+ - We created an initial train test split to use for our first model's training and testing
+    - We may later split our data into train, test, and validate splits to help us validate more complex models
    
 # Our First Model
 - For our first model we plan to fit a simple linear regression with no sentiment analysis to see how a baseline model performs
@@ -50,26 +51,12 @@ https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
   - With future models we would look to perform hyperparameter tuning to boost model performance.
   - We may have to balance our dataset by star rating so that we don't have an imbalance such as 70% of reviews being 5 star.
  
-# Redoing Milestone 2
-- Perform the data exploration step (i.e. evaluate your data, # of observations, details about your data distributions, scales, missing data, column descriptions) Note: For image data you can still describe your data by the number of classes, # of images, plot example classes of the image, size of images, are sizes uniform? Do they need to be cropped? normalized? etc.
-- Plot your data. For tabular data, you will need to run scatters, for image data, you will need to plot your example classes.
-- How will you preprocess your data? You should explain this in your readme.md file and link your jupyter notebook to it. Your jupyter notebook should be uploaded to your repo.
-
 # Milestone 3
 In this milestone you will focus on finishing any preprocessing and build your first model. You will also need to evaluate your this model and see where it fits in the underfitting/overfitting graph.
-
-1. Finish major preprocessing
-     a. For tabular data, this includes scaling and/or transforming your data, imputing your data, encoding your data, feature expansion, Feature expansion (example is taking features and generating new features by transforming via polynomial, log multiplication of features).
-
-     b. For image data this includes scaling the number of pixels from HD to SD i.e. down sampling (1280x720x3RGB to 640x360x3RGB or further). This also includes flattening your image like we did in HW2 64x64 to 4096 x 3RGB so 12888. Another option is transforming RGB to gray scale.
-   
-3. Train your first model
 
 4. Evaluate your model compare training vs test error
 
 5. Where does your model fit in the fitting graph.
-
-6. What are the next 2 models you are thinking of and why?
 
 7. Update your readme with this info added to the readme with links to the jupyter notebook!
 

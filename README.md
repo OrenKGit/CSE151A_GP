@@ -2,7 +2,9 @@
 Group Project for CSE151A
  
 # The Dataset we are using:
-https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
+https://www.kaggle.com/datasets/chaoticqubit/nuuly-customer-reviews-second-hand-apparels
+
+Dataset of customer reviews on second hand apparels. It includes features such as customer's body type and preferences, and the star rating of the review.
 
 # Our Jupyter Notebooks:
 - Pre Processing and EDA notebook
@@ -29,7 +31,7 @@ https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
     - We may later split our data into train, test, and validate splits to help us validate more complex models
    
 # Our First Model
-- For our first model we plan to fit a simple linear regression with no sentiment analysis to see how a baseline model performs
+- For our first model we plan to fit a simple linear regression to see how a baseline model performs
 - We will use this model to compare a simple strategy to our future more complex models
 - Since our task is classification we chose to bin our model's predictions to the nearest int (1-5)
 
@@ -66,7 +68,7 @@ https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
   - We binned our linear regression's predictions to make it perform like a classifier
   - Instead we likely could have implemented a one-vs-rest multiclass logistic regression as a simple classifier
   - Our model still gave us a decent foundation to work off after being binned to perform like a classifier
-  - In terms of the fitting graph, it is **underfitting**. This model is too simple shown by the poor accuracy, precision, and recall, and regression on a classification problem can not capture the pattern of the proper rating of these reviews.
+  - In terms of the fitting graph, it is **underfitting**. This model is too simple shown by the poor accuracy, precision, and recall, and regression on a classification problem can not capture the pattern of predicting a review. 
 - To improve our rating predictor we plan to do a few things
   - Implement review title and text sentiment as a feature
     - Sentiment is likely one of the strongest features in this dataset and as a human reader it is what we would use to predict rating

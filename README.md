@@ -34,14 +34,23 @@ https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
 - Since our task is classification we chose to bin our model's predictions to the nearest int (1-5)
 
 ## First Model Performance:
--- Train MAE: 0.7380
--- Test MAE: 0.7387
--- Train MSE: 0.878
--- Test MSE: 0.8817
--- Train R^2: 0.3914
--- Test R^2: 0.3902
+### Classification Metrics
+  - Accuracy: 0.3073196054680741
+  - Precision: 0.5725372565028342
+  - Recall: 0.3073196054680741
+
+### Non Classification Metrics
+  - Train MAE: 0.7380
+  - Test MAE: 0.7387
+  - Train MSE: 0.878
+  - Test MSE: 0.8817
+  - Train R^2: 0.3914
+  - Test R^2: 0.3902
 
 ## First Model Fit:
+
+![image](https://github.com/OrenKGit/CSE151A_GP/assets/91357838/f5bd7752-dcb6-435d-a2da-3e7b65baaaa9)
+
 ![image](https://github.com/OrenKGit/CSE151A_GP/assets/91357838/b5fe68a1-75d8-47a2-948d-d2b1e97cc0f5)
 
 # Future Models

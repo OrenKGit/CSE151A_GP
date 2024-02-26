@@ -31,6 +31,18 @@ https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
 # Our First Model
 - For our first model we plan to fit a simple linear regression with no sentiment analysis to see how a baseline model performs
 - We will use this model to compare a simple strategy to our future more complex models
+- Since our task is classification we chose to bin our model's predictions to the nearest int (1-5)
+
+## First Model Performance:
+-- Train MAE: 0.7380
+-- Test MAE: 0.7387
+-- Train MSE: 0.878
+-- Test MSE: 0.8817
+-- Train R^2: 0.3914
+-- Test R^2: 0.3902
+
+## First Model Fit:
+![image](https://github.com/OrenKGit/CSE151A_GP/assets/91357838/b5fe68a1-75d8-47a2-948d-d2b1e97cc0f5)
 
 # Future Models
 - Random Forest
@@ -40,8 +52,11 @@ https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
  
 # Milestone 3 Conclusion
 - Overall our linear regression performed poorly as a review rating predictor
-  - **Regression performance stats**
-  - ...
+  - We wanted to get a quick idea of how a simple model would perform on this classification task
+  - Realisitically we shouldn't have chosen a linear regression as our simple model as we have a classification task not regression
+  - We binned our linear regression's predictions to make it perform like a classifier
+  - Instead we likely could have implemented a one-vs-rest multiclass logistic regression as a simple classifier
+  - Our model still gave us a decent foundation to work off after being binned to perform like a classifier
 - To improve our rating predictor we plan to do a few things
   - Implement review title and text sentiment as a feature
     - Sentiment is likely one of the strongest features in this dataset and as a human reader it is what we would use to predict rating

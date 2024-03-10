@@ -79,3 +79,25 @@ Dataset of customer reviews on second hand apparels. It includes features such a
     - At the moment we plan to look into implementing a random forest model and a neural network as both can be used for strong multi-class classifiers.
   - With future models we would look to perform hyperparameter tuning to boost model performance.
   - We may have to balance our dataset by star rating so that we don't have an imbalance such as 70% of reviews being 5 star.
+
+# Milestone 4:
+
+In this milestone you will focus on building your second model. You will also need to evaluate your this model and see where it fits in the underfitting/overfitting graph.
+
+1. Evaluate your data, labels and loss function. Were they sufficient or did you have have to change them.
+- 
+2. Train your second model
+
+3. Evaluate your model compare training vs test error
+
+4. Where does your model fit in the fitting graph, how does it compare to your first model?
+
+5. Did you perform hyper parameter tuning? K-fold Cross validation? Feature expansion? What were the results?
+
+5. What is the plan for the next model you are thinking of and why?
+
+6. Update your readme with this info added to the readme with links to the jupyter notebook!
+
+7. Conclusion section: What is the conclusion of your 2nd model? What can be done to possibly improve it? How did it perform to your first and why?
+
+Please make sure your second model has been trained, and predictions for train, val and test are done and analyzed. 

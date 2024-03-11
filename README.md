@@ -8,10 +8,14 @@ Dataset of customer reviews on second hand apparels. It includes features such a
 
 # Our Jupyter Notebooks:
 - Pre Processing and EDA notebook
-[![CSE151A_GroupProject.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OrenKGit/CSE151A_GP/blob/main/CSE151A_GroupProject.ipynb)]
+[![CSE151A_GroupProject.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OrenKGit/CSE151A_GP/blob/main/CSE151A_GroupProject.ipynb)
 - Model 1 notebook
-[![model.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OrenKGit/CSE151A_GP/blob/main/model.ipynb)]
-
+[![model.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OrenKGit/CSE151A_GP/blob/main/model.ipynb)
+- Model 2 notebook
+[![model.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OrenKGit/CSE151A_GP/blob/main/model2.ipynb)
+- Model 3 notebook
+[![model.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OrenKGit/CSE151A_GP/blob/main/model3.ipynb)
+  
 # Data Preprocessing Steps
 - Our goal is to predict review star rating based on review features including both product features and user features.
 - Our data contains some products that have no reviews. We chose to drop these products from our dataset
@@ -29,7 +33,7 @@ Dataset of customer reviews on second hand apparels. It includes features such a
     - We processed the text using nltk to help us tokenize our review text
  - We created an initial train test split to use for our first model's training and testing
     - We may later split our data into train, test, and validate splits to help us validate more complex models
-   
+
 # Our First Model
 - For our first model we plan to fit a simple linear regression to see how a baseline model performs
 - We will use this model to compare a simple strategy to our future more complex models
@@ -52,7 +56,6 @@ Dataset of customer reviews on second hand apparels. It includes features such a
 ## First Model Fit:
 
 ![image](https://github.com/OrenKGit/CSE151A_GP/assets/91357838/f5bd7752-dcb6-435d-a2da-3e7b65baaaa9)
-
 ![image](https://github.com/OrenKGit/CSE151A_GP/assets/91357838/b5fe68a1-75d8-47a2-948d-d2b1e97cc0f5)
 
 # Future Models
@@ -82,22 +85,65 @@ Dataset of customer reviews on second hand apparels. It includes features such a
 
 # Milestone 4:
 
-In this milestone you will focus on building your second model. You will also need to evaluate your this model and see where it fits in the underfitting/overfitting graph.
+# Our Second Model
 
-1. Evaluate your data, labels and loss function. Were they sufficient or did you have have to change them.
-- 
-2. Train your second model
+## Preparation
+- We found that our data was sufficient to build a second model.
+- Our loss function naturally changed due to the model no longer being a linear regression but a logistic regression
 
-3. Evaluate your model compare training vs test error
+## Second Model Performance
 
-4. Where does your model fit in the fitting graph, how does it compare to your first model?
+### Test Classification Report
+- We have an accuracy of 0.59 which is much better than our previous model's accuracy of 0.3!
+<img width="463" alt="image" src="https://github.com/OrenKGit/CSE151A_GP/assets/91357838/efc8f9c4-8294-4e01-9eb5-708fa9fe5ed3">
 
-5. Did you perform hyper parameter tuning? K-fold Cross validation? Feature expansion? What were the results?
+### Train/Test Error
+Train MAE: 0.5896
+Test MAE: 0.5973
+Train MSE: 1.095
+Test MSE: 1.1069
+Train R^2: 0.2410
+Test R^2: 0.2344
 
-5. What is the plan for the next model you are thinking of and why?
+### Overfitting/Underfitting Graph
+- From these confusion matrix graphs alongside the model performance metrics we can clearly see that the model is not overfitting
+- It is possible our model may be slightly underfitting as our model's train and test performance are very similar
+- If the model performance were lower we would lean towards saying it is underfitting
+- We believe our model is neither overfitting or underfitting
+![image](https://github.com/OrenKGit/CSE151A_GP/assets/91357838/2ba984af-a216-4fca-8ef7-6676db20e1fa)
+![image](https://github.com/OrenKGit/CSE151A_GP/assets/91357838/36331bb5-9229-453a-a149-7a5105a1bd75)
 
-6. Update your readme with this info added to the readme with links to the jupyter notebook!
+## Hyperparameter tuning
+- We chose to not do significant hyperparameter tuning for this model
+- Our reasoning was that a logistic regression model doesn't really have many hyperparameters to tune anyways
+- Instead of using a grid search to iterate through parameters we manually tried a few different 'solvers' for the logistic regression
+- The model trains very fast so this is easy to evaluate
+- We then chose to best solver for our model
 
-7. Conclusion section: What is the conclusion of your 2nd model? What can be done to possibly improve it? How did it perform to your first and why?
+## Our Next Model
+- For our next model we plan to implement a random forest classifier
+- We plan to implement hyperparameter tuning for our final model with gridsearchcv in order to optimize our final model
+- Random forest is a more complex model that is naturally capable of multiclass classification tasks
+    - It is also naturally good at resisting overfitting
+    - This means that our hyperparameter tuning hopefully won't lead us to an overfit model
 
-Please make sure your second model has been trained, and predictions for train, val and test are done and analyzed. 
+# Milestone 4 Conclusion
+- Overall this model was relatively simple but a much better choice than our first model
+  - Our first model was a decent baseline to compare to but overall a poor choice for this type of problem
+  - Our second model being capable of naturally performing multiclass classification means it was much more suitable
+  - Our second model actually performs reasonably well with an accuracy of 0.6, especially compared to the first model which had an accuracy of 0.3
+- Our model appears to be neither overfitting or underfitting
+  - Model is clearly not overfitting as the train metrics are not significantly higher than test metrics
+  - Our model may exhibit mild underfitting but overall train and test perform similarly and not too poorly
+  - This leads us to believe we are neither underfitting or overfitting
+- This model being a logistic regression means there aren't many hyperparameters to tune
+  - We did basic manual hyperparameter tuning by testing a few different solvers for the model
+  - We chose the best solver and used it for our real model
+- To further improve this model we likely need to fix the class imbalance
+  - 5 star ratings are far more represented within the data and may lead our model to be biased towards predicting 5
+- For our final model we plan to use a more complex model and optimize it through hyperparameter tuning
+  - Our model will likely be a random forest
+    - Random forest is naturally capable of classification tasks
+    - It is also good at resisting overfitting
+    - This means that our hyperparameter tuning hopefully won't lead us to an overfit model
+

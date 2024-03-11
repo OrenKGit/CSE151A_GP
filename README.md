@@ -110,6 +110,7 @@ Test R^2: 0.2344
 - It is possible our model may be slightly underfitting as our model's train and test performance are very similar
 - If the model performance were lower we would lean towards saying it is underfitting
 - We believe our model is neither overfitting or underfitting
+
 ![image](https://github.com/OrenKGit/CSE151A_GP/assets/91357838/2ba984af-a216-4fca-8ef7-6676db20e1fa)
 ![image](https://github.com/OrenKGit/CSE151A_GP/assets/91357838/36331bb5-9229-453a-a149-7a5105a1bd75)
 

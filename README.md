@@ -90,7 +90,8 @@ Dataset of customer reviews on second hand apparels. It includes features such a
 ## Preparation
 - We found that our data was sufficient to build a second model.
 - Our loss function naturally changed due to the model no longer being a linear regression but a logistic regression
-
+- To effectively handle the categorical nature of our target variable, we incorporate the Multinomial distribution within our logistic regression model.
+  
 ## Second Model Performance
 
 ### Test Classification Report

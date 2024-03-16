@@ -7,7 +7,7 @@ https://www.kaggle.com/datasets/chaoticqubit/nuuly-customer-reviews-second-hand-
 Dataset of customer reviews on second hand apparels. It includes features such as customer's body type and preferences, and the star rating of the review.
 
 # Our Jupyter Notebooks:
-- Pre Processing and EDA notebook
+- Pre Processing and Exploratory Data Analysis notebook
 [![CSE151A_GroupProject.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OrenKGit/CSE151A_GP/blob/main/CSE151A_GroupProject.ipynb)
 - Model 1 notebook
 [![model.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OrenKGit/CSE151A_GP/blob/main/model.ipynb)
@@ -43,11 +43,20 @@ Each entry consisted of the characteristics of each customer like their size and
 - review_title: Title of the review posted
 - review_text: The full text of the review.
 - star_ratings: The rating, 1-5, of the review
+- 
 Number of observations: 3422
 Number of reviews any features missing or null: 335
-Exploratory techniques such as correlation matrices and scatterplots on the multiple selected features were done to check the outcomes
+Exploratory techniques such as correlation matrices and scatterplots on the multiple selected features were done to check the outcomes.
+![image](https://github.com/OrenKGit/CSE151A_GP/assets/146896640/c810afe4-c2bb-416f-971b-1bc353383fa3)
+
+![image](https://github.com/OrenKGit/CSE151A_GP/assets/146896640/55303c2e-a505-4b49-8f37-ee14c89a1d11)
+
+![image](https://github.com/OrenKGit/CSE151A_GP/assets/146896640/13b4a9f4-77b0-4140-9861-2ed0dbf879f4)
+
+
+
 ## Preprocessing
-(Notebooks: CSE151A_GroupProject.ipynb, model.ipynb)
+
 The original data was cleaned up by dropping null or empty reviews, creating an average star rating for each product based on the number of reviews for that product, and creating better formatting the .json file for easier extraction. For example, the format included assigning all reviews to a product name rather than having to check every single review.  Conversions of proper variable types were also done, such as height and weight being converted from their string format into integers of pounds and inches respectively. One hot encoding is useful for models with feature selection models, and was used on user size, body type, bra size, and color. Processing the text of the reviews was done through natural language processing and tokenizing each word and associating them to their rating.
 ### Model 1
 Linear Regression
@@ -61,7 +70,7 @@ Multinomial logistic regression model does the same in that it predicts the star
 Random Forest Classification
 
 The random forest classifier tokenizes and processes the text through the natural language toolkit and its tools such as lemmatization and stop words. Bag of words is used, and the model itself uses 100 decision trees as its estimators. Grid search is used for hyperparameter tuning and finds the best parameters along with the best score. Our grid search parameters were defined as: 
-
+```
 param_grid = { 
     'n_estimators': [10, 50, 100, 200],
     'max_depth': [None, 10, 20, 30],  
@@ -71,40 +80,42 @@ param_grid = {
     'bootstrap': [True, False],   
     'random_state': [42],
 }
+```
 
 # Results
 ## Model 1
 Classification Metrics
-Accuracy: 0.3073196054680741
-Precision: 0.5725372565028342
-Recall: 0.3073196054680741
-Non Classification Metrics
-Train MAE: 0.7380
-Test MAE: 0.7387
-Train MSE: 0.878
-Test MSE: 0.8817
-Train R^2: 0.3914
-Test R^2: 0.3902
+- Accuracy: 0.3073196054680741
+- Precision: 0.5725372565028342
+- Recall: 0.3073196054680741
+- Non Classification Metrics
+- Train MAE: 0.7380
+- Test MAE: 0.7387
+- Train MSE: 0.878
+- Test MSE: 0.8817
+- Train R^2: 0.3914
+- Test R^2: 0.3902
 
 ![image](https://github.com/OrenKGit/CSE151A_GP/assets/91357838/f5bd7752-dcb6-435d-a2da-3e7b65baaaa9)
 ![image](https://github.com/OrenKGit/CSE151A_GP/assets/91357838/b5fe68a1-75d8-47a2-948d-d2b1e97cc0f5)
 
 ## Model 2
-Accuracy: 0.59
-Weighted average precision: 0.55
-Weighted average recall: 0.59
-Train MAE: 0.5896 
-Test MAE: 0.5973 
-Train MSE: 1.095 
-Test MSE: 1.1069 
-Train R^2: 0.2410 
-Test R^2: 0.2344
+- Accuracy: 0.59
+- Weighted average precision: 0.55
+- Weighted average recall: 0.59
+- Train MAE: 0.5896 
+- Test MAE: 0.5973 
+- Train MSE: 1.095 
+- Test MSE: 1.1069 
+- Train R^2: 0.2410 
+- Test R^2: 0.2344
 
 ![image](https://github.com/OrenKGit/CSE151A_GP/assets/91357838/2ba984af-a216-4fca-8ef7-6676db20e1fa)
 ![image](https://github.com/OrenKGit/CSE151A_GP/assets/91357838/36331bb5-9229-453a-a149-7a5105a1bd75)
 
 ## Model 3
 Best grid search parameters: {'bootstrap': False, 'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 200, 'random_state': 42}
+
 Best accuracy: 0.6473
 
 <img width="428" alt="image" src="https://github.com/OrenKGit/CSE151A_GP/assets/91357838/f4ee4f28-a794-4734-89b7-f4a1fc1058b4">
@@ -114,7 +125,9 @@ Best accuracy: 0.6473
 # Discussion
 Ultimately a lot of data preprocessing ended up not being used, but was good for information and data exploration. The features such as the review user’s weight, height, and shape or the color and size of clothes weren’t used due to us deciding that all models should use sentimental analysis. This was for easier model comparison and seeing how each model method performs
 Linear regression was used as the initial model due to its simplicity. Since the task is classification but our linear regression output decimals we had to threshold our output values to star rating integers. While linear regression is not the best model to do classification, starting with a regression model will help better understand the relationship between the reviews and the rating, providing important information for selecting future models. 
+
 Since the linear regression model performed poorly as a review rating predictor, we chose multinomial logistic regression model as our second model because it’s well-suited for classification of predicting star ratings from 1 to 5 based on reviews. We also intended to compare this model with the linear regression model to assess how much our model has improved by incorporating nonlinear relationships into our predictions. This resulted in a large boost in accuracy through just model choice alone. We did some basic hyperparameter tuning through manually testing different logistic regression solvers and then chose the one that performed the best on our test set. The end result was an increase from an accuracy of around 0.3 with the linear regression model to an accuracy of around 0.6 with the logistic regression.
+
 We chose the random forest classifier as our final model because it employs an ensemble learning method, which allows the model to combine the predictions of multiple individual decision trees to improve performance. Therefore, it tends to have lower variance, greater robustness to overfitting, and better generalization performance compared to logistic regression. Since the random forest classifier also has many hyperparameters that can be tuned to boost final model performance we chose to use sklearn’s GridSearchCV to iterate through our chosen hyperparameters. The parameters we tuned included: n_estimators, max_depth, min_samples_split, min_samples_leaf, max_features, bootstrap. Hyperparameter tuning was the longest part of the modeling process with our chosen parameter grid taking around 40 minutes to run. Our hyperparameter tuning also only resulted in an accuracy increase of 0.01, suggesting we either were unable to find the utmost optimal hyperparameters or that optimal hyperparameters only resulted in small performance improvements. Despite this, the tuning was valuable as with our final model we wanted to get every bit of performance out of it that we could.
 
 # Conclusion

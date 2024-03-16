@@ -18,7 +18,7 @@ Dataset of customer reviews on second hand apparels. It includes features such a
 
 # Multiple Machine Learning Models’ Analysis of Customer Reviews on Second-Hand Apparel
 # Introduction
-Online commerce and retails platforms have become crucial in recent times with websites such as Amazon and eBay. Buying clothes and apparel online have gained increasing popularity, and most young adult Americans prefer online shopping over in-person. With today’s inflation and increased prices however, buying used clothes or even renting them have become more prominent, known as thrifting. Being second-hand however, customer rating and approval becomes more crucial than buying the typical new clothes. 
+Online commerce and retails platforms have become crucial in recent times with websites such as Amazon and eBay. Buying clothes and apparel online have gained increasing popularity, and most young adult Americans prefer online shopping over in-person. With today’s inflation and increased prices however, buying used clothes or even renting them have become more prominent, known as thrifting. Being second-hand however, customer rating and approval becomes more crucial than buying the typical new clothes.
 
 Through machine learning and natural language processing, companies can improve their products by predicting the sentiment of their reviews through analyzing the characteristics and features of a review that will lead to more sales. Other important uses for clothing stores can be quality control of products, insight on current trends in fashion or styles, and better product recommendations through sentimental analysis. 
 
@@ -43,10 +43,13 @@ Each entry consisted of the characteristics of each customer like their size and
 - review_title: Title of the review posted
 - review_text: The full text of the review.
 - star_ratings: The rating, 1-5, of the review
-- 
+  
 Number of observations: 3422
+
 Number of reviews any features missing or null: 335
-Exploratory techniques such as correlation matrices and scatterplots on the multiple selected features were done to check the outcomes.
+
+Exploratory techniques such as correlation matrices and scatterplots on the multiple selected features were done to check the relationships between variables.
+
 ![image](https://github.com/OrenKGit/CSE151A_GP/assets/146896640/c810afe4-c2bb-416f-971b-1bc353383fa3)
 
 ![image](https://github.com/OrenKGit/CSE151A_GP/assets/146896640/55303c2e-a505-4b49-8f37-ee14c89a1d11)
